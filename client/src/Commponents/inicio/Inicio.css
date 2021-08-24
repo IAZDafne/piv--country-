@@ -1,0 +1,24 @@
+.yaotzin{
+    margin: 0px;
+    background-image: url(./f8bfcd_7808f0622d76435e8fae8600566950b9_mv2.gif);
+    background-repeat: no-repeat;
+    height: 1000vh;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center center;
+     background-color:black
+}
+
+.botonPlay{
+    bottom: -400px; left: 630px;
+    justify-content: center;
+    flex-direction: row;
+    display: block;
+    position: relative;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 10px 30px;
+  -webkit-border-radius: 150px;
+  border-radius: 150px;
+}

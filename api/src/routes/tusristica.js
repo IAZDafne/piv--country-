@@ -6,7 +6,7 @@ const { Country,Turistica } = require('../db')
 
 router.post('/', async(req,res)=>{
     const { name,difficulty, duration, season, country}=req.body;
-    console.log(name, difficulty,duration, season,'?',country)
+    
     try {
         const nuevaAct = await Turistica.create({ name, difficulty,duration,season })
 
@@ -14,9 +14,8 @@ router.post('/', async(req,res)=>{
             const countrydb = await Country.findOne({
                 where : { id : country }
             })
-            console.log('linea 21', countrydb) 
+            
             await nuevaAct.addCountry(countrydb)
-            console.log('?')
             return res.send(`${nuevaAct.nombre} ${countrydb.nombre}`)
         } else {
             country.forEach(async(paisId) => {

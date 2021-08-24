@@ -37,10 +37,13 @@ if (name) {
     });
     return res.status(200).send(country);
 }else if(!name){
+
+    let offSet =require.query 
     const paisesdb =await Country.findAll({
         
             include:Turistica,
-            limit:10
+           // limit:10,
+           // offset:offSet
     })
     return res.json(paisesdb) 
 }
