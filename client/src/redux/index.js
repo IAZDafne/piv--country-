@@ -3,14 +3,14 @@ import {
     SEARCH_NAME,
     GET_COUNTRY_DETAIL,
     FILTER_POBLACION,
-    POST_TURISTICA,
+    GET_ACTIVIDAD,
     All_TURISTICA,
     FILTER_ABC} from "../acctions"
 
 
 const initialState={
     country:[],
-    copyCountry:[],
+    actividad:[],
     countrydetai:[]
 }
 function rootReducer(state=initialState,action){
@@ -19,13 +19,17 @@ switch(action.type){
         ...state,
         country:action.payload
     }
+    case GET_ACTIVIDAD: return{
+        ...state,
+        actividad:action.payload
+    }
     case SEARCH_NAME: return{
         ...state,
         country:action.payload
     }
     case GET_COUNTRY_DETAIL: return {
         ...state,
-        countrydetai:action.payload
+        countrydetail:action.payload
     }
     case FILTER_ABC:{
        if (!action.payload) return {
@@ -59,13 +63,13 @@ switch(action.type){
         if(action.payload==="hihg") return {
             ...state,
             country:[...state.country].sort((a,b)=>{
-                return a.population > b.population ? 1 : -1
+                return a.population > b.population ? -1 : 1
             })
         } 
         return{
              ...state,
              country:[...state.country].sort((a,b) =>{
-                 return a.population > b.population ? -1 : 1
+                 return a.population > b.population ? 1 : -1
              })
 
         }
@@ -74,11 +78,11 @@ switch(action.type){
     case All_TURISTICA: {
         if(!action.payload) return{
             ...state,
-            country: state.copyCountry
+            country: state.actividad
         }
         return { 
             ...state,
-            country:state.copyCountry.filter(e=>{
+            country:state.actividad.filter(e=>{
                 e.turistica.includes(action.payload) 
             }
 

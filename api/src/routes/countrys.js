@@ -32,8 +32,11 @@ if (name) {
         where: {
             name: {
                 [Sequelize.Op.iLike]: `%${name}%`,
+                
             },
-        }   
+         
+        },
+        include:Turistica  
     });
     return res.status(200).send(country);
 }else if(!name){

@@ -6,6 +6,9 @@ import Inicio from './Commponents/inicio/Incio'
 import Home from  './Commponents/home/home'
 import { Route } from 'react-router-dom';
 import './App.css';
+import  Detalle from './Commponents/detalle/Detalle'
+import Crear from './Commponents/creacion/Crear'
+import Actividad from './Commponents/actividad/Actividad'
 
 
 function App() {
@@ -14,11 +17,14 @@ function App() {
     dispatch(getCountry())
   }, [dispatch])
 
-console.log(getCountry())
+console.log(getCountry('hola'))
   return (
     <>
     <Route exact path='/' component={Inicio} />
     <Route exact path ='/country' component = {Home}/>
+    <Route exact path = '/countries/:id' component = {Detalle}/>
+    <Route exact path = '/crear' component ={Crear}/>
+    <Route exact path = '/actividad' component ={Actividad}/>
     </>
   
   );

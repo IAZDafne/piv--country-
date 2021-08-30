@@ -10,7 +10,7 @@ function Pais ({props}){
     return(
         <>
         <div className='card'>
-            <Link to ={`/country/${id}`} className='link'>
+            <Link to ={`/countries/${id}`} className='link'>
              <div className='cards'>
                  <img src={flag} className='bandera'/>
                  <h5  className='titulo'>{name}</h5>

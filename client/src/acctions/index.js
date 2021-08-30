@@ -5,7 +5,7 @@ export const SEARCH_NAME = 'SEARCH_NAME'
 export const GET_COUNTRY_DETAIL = 'GET_COUNTRY_DETAIL'
 export const FILTER_ABC= 'FILTER_ABC'
 export const FILTER_POBLACION = 'FILTER_POBLACION '
-export const POST_TURISTICA= 'POST_TURISTICA'
+export const GET_ACTIVIDAD = 'GET_ACTIVIDAD,'
 export const All_TURISTICA = 'All_TURISTICA'
 
 // router.use('/actividad',turistica)
@@ -39,16 +39,19 @@ export function getCountryDetail(id){
         })
     }
 }
-export function postTuristica(){
-    return async function (dispatch){
-        const response = await 
-        axios.get('http//localhost:3001/turistica')
+export function turistica(){
+    return async function (dispatch) {
+        const response = await
+        axios.get('http://localhost:3001/actividad/?name')
         dispatch({
-            type:POST_TURISTICA,
+            type:GET_ACTIVIDAD,
             payload:response.data
         })
-    }
+         console.log(response,'soy response')
 }
+    }
+   
+
 export function filterabc(input){
     return{
         type:FILTER_ABC,

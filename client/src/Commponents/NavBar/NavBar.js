@@ -1,7 +1,9 @@
 import React, {useState} from  'react'
 import {useDispatch} from 'react-redux'
-import {NavLink, Navlink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import {searchByName} from '../../acctions/index'
+import Filtro from "../filtro/FIltro"
+import Filtroact from '../filtro/filtroact'
 import './NavBar.css'
 
 function NavBar(){
@@ -19,14 +21,15 @@ function NavBar(){
         Setinput('')
     }
    
-    // const [click , setClick]= useState(false)
-    // const  handleClick =() => setClick(!click)
+   
 
 
 
     return(
         <>
+        <Filtro/>
         <NavLink exact to = "/" className='logo'>Atachi.Travel</NavLink>
+        <NavLink exact to = "/crear" className="crear">Crear</NavLink>
          <form className='form'>
              <input onChange={handleInput} 
              value={input} 
