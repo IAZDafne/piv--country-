@@ -7,6 +7,7 @@ export const FILTER_ABC= 'FILTER_ABC'
 export const FILTER_POBLACION = 'FILTER_POBLACION '
 export const GET_ACTIVIDAD = 'GET_ACTIVIDAD,'
 export const All_TURISTICA = 'All_TURISTICA'
+export const FILTRO_ACT ='FILTRO_ACT'
 
 // router.use('/actividad',turistica)
 // router.use('/obtener',country)
@@ -39,7 +40,7 @@ export function getCountryDetail(id){
         })
     }
 }
-export function turistica(){
+export function todasActividades(){
     return async function (dispatch) {
         const response = await
         axios.get('http://localhost:3001/actividad/?name')
@@ -63,11 +64,16 @@ export function filterabc(input){
         payload:input
     }
 }
-export function filterqact (turistica){
+export function filterqact (name){
     return{
         type: All_TURISTICA,
-        payload: turistica
+        payload: name
     }
 }
-
+export function filtroContinente(region){
+    return{
+        type:FILTRO_ACT,
+        payload:region
+    }
+}
 

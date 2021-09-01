@@ -4,21 +4,27 @@ import './Pais.css'
 function Pais ({props}){
 
     let { name, flag, region,id}=props
-    console.log(props)
+    console.log(props,'soy propspais')
 
 
     return(
         <>
+        <div className='flip-cardr'>
         <div className='card'>
             <Link to ={`/countries/${id}`} className='link'>
-             <div className='cards'>
-                 <img src={flag} className='bandera'/>
-                 <h5  className='titulo'>{name}</h5>
-                 <span className='continente'>{region}</span>
+           <img src={flag} className='banderas' />
+                 
+                 
+             <h5 >{name}</h5>
+             <span className=' items'>{region}</span>
                  
 
-             </div>
+                 
+             
+          
+
             </Link>
+        </div>
         </div>
         
         </>

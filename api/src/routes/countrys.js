@@ -45,8 +45,8 @@ if (name) {
     const paisesdb =await Country.findAll({
         
             include:Turistica,
-           // limit:10,
-           // offset:offSet
+            // limit:10,
+            // offset:offSet
     })
     return res.json(paisesdb) 
 }

@@ -27,10 +27,22 @@ function NavBar(){
 
     return(
         <>
-        <Filtro/>
-        <NavLink exact to = "/" className='logo'>Atachi.Travel</NavLink>
+       
+       
+        <div className='atachi-logo'>
+
+        <NavLink exact to = "/country" className='logo'>Atachi.Travel</NavLink>
+        
+        </div>
+
+    
+        <div className='linkcrear' >
         <NavLink exact to = "/crear" className="crear">Crear</NavLink>
+        <Filtro/>
+        {/* </div>
+         <div className='buscar'> */}
          <form className='form'>
+             <div className='inputBucar'>
              <input onChange={handleInput} 
              value={input} 
              type ='text' 
@@ -38,6 +50,8 @@ function NavBar(){
              spellCheck='false' 
              className='inputBuscar'
              />
+             </div>
+             
              <button onClick={handleSearch} 
              className='boton buscar'>
                 Buscar
@@ -45,6 +59,8 @@ function NavBar(){
 
 
          </form>
+         </div>
+         
         </>
     )
 }

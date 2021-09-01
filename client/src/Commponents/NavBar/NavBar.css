@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+
+.atachi-logo{
+    background-color: rgb(2, 3, 71);
+    
+}
+
+
+
+.logo{
+    color: transparent;
+    background-color: #FF1493;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 25px, rgba(255, 255, 255, 0.5) 25px, rgba(255, 255, 255, 0.5) 50px);    
+    background-clip: text;
+    animation: color 50s linear infinite;
+    background-size: 200%;   
+    font-size: 50px; 
+    font-family: 'Architects Daughter', cursive;
+    margin:0%;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-left: 450px;
+    display: flex;
+  }
+  
+  @keyframes color {
+    from {
+        background-position: 0% 50%;
+    }
+  
+    to {
+        background-position: 100% 50%;
+    }
+  }
+  .crear{
+      text-decoration: none;
+      color: #FF1493;
+      font-family: 'Architects Daughter', cursive;
+      font-size:30px ;
+      box-shadow: 10 10 15px #000;
+      margin-left: 20px; 
+
+  }
+  .linkcrear{
+    display: inline-grid;
+    font-family: 'Architects Daughter', cursive;
+   font-size:20px ;
+   text-decoration:none ;
+   color: rgb(15, 160, 160);
+  }
+  .buscar{
+    display: inline-grid;
+    font-family: 'Architects Daughter', cursive;
+   
+
+  }
+  .inputBucar{
+    display: inline-grid;
+  
+    font-family: 'Architects Daughter', cursive;
+  }
+  

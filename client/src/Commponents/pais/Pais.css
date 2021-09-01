@@ -1,12 +1,22 @@
-.card{
+
+  @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+  
+  
+  .card{
     padding: 15px;
-    margin: 0;
-    background-color: transparent;
+    margin: 10px;
+    background-color:rgb(167, 188, 247,0.5);
+    text-align: center;
     width: 300px;
-    height: 300px;
-    perspective: 1000px; 
+    height: 200px;
+    border-radius: 10px;
     align-items: center;
+    font-family: 'Architects Daughter', cursive;
+    text-shadow: 5px,5px,5px,5px white;
+    font-size: 20px;
+    
     }
+
 .cards{
     padding: 15px; 
     font: normal 16px/1 "Comic Sans MS", cursive, sans-serif;
@@ -21,10 +31,23 @@
     min-width: 0;
     word-wrap: break-word;
     background-clip: border-box;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.5;
 }
-    .bandera{
+    .banderas{
     width: 200px;
     height: 80px;
     align-items: center;
     border-radius: 10px;
+}
+.link{
+    text-decoration: none;
+    color: #000003;
+   
+}
+.link:visited{
+    color: #000003;
+}
+.card:hover{
+    background-color: teal;
 }

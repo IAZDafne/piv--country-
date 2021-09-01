@@ -19,7 +19,7 @@ function Home (){
  const country = useSelector(state =>state.country)
 console.log(country)
  const [page, setPage]=useState(1)
- const [ppp]=useState(15)
+ const [ppp]=useState(10)
  const indexOfLastCountry= page * ppp
  const indexOfFirstCountry = indexOfLastCountry - ppp
  const pais = country?.slice(indexOfFirstCountry,indexOfLastCountry)
@@ -27,7 +27,7 @@ console.log(country)
 
     return(
         <>
-        <main>
+        <main className='todohome'>
             <NavBar/>
             <div className='paises'>
                 {

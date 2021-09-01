@@ -1,13 +1,16 @@
 import './Paginas.css'
+import { useSelector} from 'react-redux'
 
 
 
-function pagina ({ppp,pt, p}){
+function Pagina ({ppp,pt, p}){
 //ppp= paises por pagina 
-// tp = todos los paises 
+//pt = todos los paises 
 // p = paginacion 
 // np = numero de paginas 
 
+const country =useSelector(state=> state.country)
+console.log('contry pag', country)
 const np =[]
 for (let i= 1; i<= Math.ceil(pt/ppp); i++){
     np.push(i)
@@ -19,8 +22,8 @@ return(
         <nav className='completa'>
             <ul className='pag' >
                 {np.map(n=>(
-                    <li key={n} className= "pagina"> 
-                         <button onClick={()=> p(n)} className='siguient'>
+                    <li key={n} className= "page"> 
+                         <button onClick={()=> p(n)} className='pag-link'>
                              {n}
                          </button>
                     </li>
@@ -32,4 +35,4 @@ return(
     )
 }
 
-export default pagina 
+export default Pagina 

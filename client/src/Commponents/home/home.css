@@ -3,3 +3,14 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+.todohome{
+    background-image: url('./back-8.jpg');
+    background-repeat: no-repeat;
+    height: 1500px;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center center;
+   
+    opacity: 0.7px;
+    
+}

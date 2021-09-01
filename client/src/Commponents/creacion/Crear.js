@@ -1,7 +1,7 @@
-import {useEffect, useState} from 'react'
+import { useState} from 'react'
 import { useSelector,useDispatch} from 'react-redux'
 import axios from 'axios'
-import{getCountry,getCountryDetail,postTuristica} from '../../acctions/index'
+import {Link}from 'react-router-dom'
 
 
 
@@ -23,7 +23,7 @@ const country =useSelector(state=> state.country)
 
 
 
-
+ console.log('te amo',setActividad)
  console.log(country,'soy pais ')
     
     
@@ -47,9 +47,10 @@ const country =useSelector(state=> state.country)
             });
         }
     }
-
+    console.log(actividad,' soy actividad 1234')
     const handlerSubmit = async (e) => {
         e.preventDefault();
+        e.target.reset()
         const msg = await sendActivity(actividad);
         if (msg) alert(msg);
         setActividad({
@@ -85,106 +86,61 @@ const country =useSelector(state=> state.country)
         }
     }
 
-   //hacfer cada unio por nomebre y luego mandar un objeto con el estado cada uno 
-
-//     const [error, setError]=useState('')
-
-//     const handleChange=(e)=>{
-//         let target = e.target.value
-//         if(e.target.name === 'dificulty'){
-//             validate(target)
-//         }
-//         if(e.target.name === 'id'){
-//             setActividad({
-//                 ...actividad,
-//                 id:[...actividad.id, target]
-//             })
-           
-//             //actividad.id.concat(target)
-//         }else(
-//             setActividad({
-//                 ...actividad,
-//                 [e.target.name]:target
-//             })
-//         )
-//     }
-//     console.log(actividad,' soy actividad')
-//     console.log(actividad.id,'soy id de act ')
-//   console.log(handleChange,'soy handle')
-//     const handlerSubmit= async  (e)=>{
-//         e.preventDefault()
-//         e.target.reset()
-//         const msg= await creacion(actividad)
-      
-       
-        
-//     }
-    
   
-//     const  creacion =async (actividad)=>{
-     
-//         const {name,dificulty,duration,season,id}=actividad;
-//         console.log(name,dificulty,duration,season,id,"holis")
-//         if(!name||!dificulty||!duration||!season||!id[0]) {
-//             return ('Favor de llenar todos los campos')}else{
-//         const creado =await axios.post('http://localhost:3001/actividad',{
-//             name,
-//             dificulty,
-//             duration,
-//             season,
-//             id
-//         })
-//         return creacion.data.msg
-        
-//     }}
-     
-//     const validate =(e)=>{
-//         if(!/^[1-5]/.test(e)){
-//             setError('Debe de ser de 1 a 5')
-//         }else {
-//             setError('')
-//         }
-//     }
-
-       
-
-    // const optionsSeason =[
-    //     {value: 'invierno' , label : 'Invierno'},
-    //     {value: 'otoño', label : 'Otoño' },
-    //     {value: 'primavera', label: 'Primavera'},
-    //     {value: 'verano', label : 'Verano'}
-    
-    // ]
-    
-        
-    // const optionsCountry=country.map((e, id)=> {
-    //     return e.id
-    // })
-    // console.log(optionsCountry,'yo soy map')
     function cambioPais(e) {
         setActividad(e.target.value)
     }
-
+    
+    const options = actividad.map((e)=>{
+        return e.name
+    })
+    console.log('map 2',options)
 
     //
     return (
         <> 
+         <div className='atachi-logo'>
+
+         <Link exact to = "/country" className='logo'>Atachi.Travel</Link>
+
+          </div>
+          <div className='titulo'  >
+             <h1>Crear tu actividad</h1>
+            <p>Crear una actividad para paises especificos </p> 
+          </div>
         <form onChange={handlerChange} onSubmit={handlerSubmit} className='formulario' >
+            <div className='Nombre'>
+            <span>Nombre</span>
             <input type='text' name ='name' placeholder='Nombre' ></input>
+            </div>
+            <div>
+             <span>Dificultad</span>   
             <input name='difficulty' placeholder='1 a 5'type='number' id='dif' min='1' max='5'maxLength='1' ></input>
-            <input type='number'name='duration' placeholder='1 a 24npm' id='dura' min='1' max='24'maxLength='2' ></input>
+            </div>
+            <div className='duracion'>
+            <span>Duración</span>
+            <input type='number'name='duration' placeholder='1 a 24' id='dura' min='1' max='24'maxLength='2' ></input>
+            <span>Hrs</span>
+            </div>
+            <div className='temporada'>
+            <span>Temporada</span>
             <select name='season'>
+                <option value=''>Temporada </option>
               <option value='verano'> Verano</option> 
               <option value='invierno'> Invierno</option> 
               <option value='otoño'> Otoño</option> 
               <option value='primavera'> Primavera</option> 
             </select>
+            </div>
+            <div className='pais'>
+            <span>Pais</span>
             <select  name = 'country' value={country.name} onChange={cambioPais}>
             <option >Seleccionar paises</option>
             {country.map((e)=>{
                 return <> 
                 
                 <option value={e.name}>{e.name}</option>
+              
             </>
              //return<option value={e.id}>{e.name}</option>
                  
@@ -194,8 +150,12 @@ const country =useSelector(state=> state.country)
             
                 
             </select>
-            <button>crear</button>
-
+            <div>
+                
+            </div>
+           
+            <button>Crear</button>
+            </div>
         </form>
         </>
     )

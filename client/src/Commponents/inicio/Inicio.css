@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+
+
 .yaotzin{
     margin: 0px;
     background-image: url(./f8bfcd_7808f0622d76435e8fae8600566950b9_mv2.gif);
@@ -10,7 +14,7 @@
 }
 
 .botonPlay{
-    bottom: -400px; left: 630px;
+    bottom: -400px; left: 570px;
     justify-content: center;
     flex-direction: row;
     display: block;
@@ -19,6 +23,43 @@
   box-sizing: content-box;
   cursor: pointer;
   padding: 10px 30px;
-  -webkit-border-radius: 150px;
-  border-radius: 150px;
+  -webkit-border-radius:100%;
+  border-radius: 100%;
+  background-color: rgb(25, 160, 201);
+  font-family: 'Architects Daughter', cursive;
+  color:rgb(131, 2, 124);
+  font-size: 20px;
+  margin: 50px;
+  
+}
+
+.linkplay{
+  text-decoration: none;
+
+}
+.atachi {
+  color: transparent;
+  background-color: #4ee7f1;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 25px, rgba(255, 255, 255, .5) 25px, rgba(255, 255, 255, .5) 50px);    
+  background-clip: text;
+  animation: color 50s linear infinite;
+  background-size: 200%;   
+  font-size: 50px; 
+  font-family: 'Architects Daughter', cursive;
+  margin:0%;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  margin-left: 650px;
+  display: flex;
+}
+
+@keyframes color {
+  from {
+      background-position: 0% 50%;
+  }
+
+  to {
+      background-position: 100% 50%;
+  }
 }

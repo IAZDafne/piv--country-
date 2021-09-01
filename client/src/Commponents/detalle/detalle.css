@@ -1,0 +1,76 @@
+.todiss{
+    background-image: url('./bac14.jpg');
+    
+    background-repeat:no-repeat ;
+    height: 100%;
+    width: 100%;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size:cover;
+    
+}
+
+.atachi-logo{
+    background-color: rgb(2, 3, 71);
+    
+}
+
+.atachi-logocolor{
+    color:   transparent;
+   background-color: #FF1493;
+   background-image: repeating-linear-gradient(45deg, transparent, transparent 25px, rgba(255, 255, 255, 0.5) 25px, rgba(255, 255, 255, 0.5) 50px);    
+   background-clip: text;
+   animation: color 50s linear infinite;
+   background-size: 200%;   
+   font-size: 50px; 
+   font-family: 'Architects Daughter', cursive;
+   margin:0%;
+   align-items: center;
+   text-align: center;
+   position: relative;
+   margin-left: 650px;
+   display: flex;
+   }
+   
+   @keyframes color {
+   from {
+       background-position: 0% 50%;
+   }
+   
+   to {
+       background-position: 100% 50%;
+   }
+   }
+   .tododetalle{
+       align-items: center;
+       text-align: center;
+       font-family: 'Architects Daughter', cursive;
+       background-repeat: no-repeat;
+       width: 100%;
+       height: 100%;
+       ;
+   }
+   .link{
+    text-decoration: none;
+    color: #f5f5fa;
+   
+}
+.link:visited{
+    color: #fefeff;
+}
+.bandera{
+    width: 300px;
+    height: 180px;
+    align-items: center;
+    border-radius: 10px;
+}
+.titulo{
+    font-size:40px;
+}
+.image-detail{
+    background-repeat: no-repeat;
+}
+.carddetalle{
+    color: rgb(244, 244, 250);
+    text-shadow: 25px 25px 25px black;
+}

@@ -21,23 +21,31 @@ function Detalle () {
     
     return (
         <> 
-        <NavBar/>
-        <div>
+        <div className='todiss'>
+        <div className='atachi-logo'>
+
+<Link exact to = "/country" className='logo'>Atachi.Travel</Link>
+
+ </div>   
+ 
+        <div className='tododetalle'>
             {country ?
-            <div>
+            <div className='carddetalle'>
+               
                 <h4 className='titulo'>{country.name}</h4>
                 <img src={country.flag} className='bandera'/>
-                <h2> Area:{country.area}</h2>
-                <h2> Capital:{country.capital}</h2>
-                <h2> Poblacion:{country.population}</h2>
-                <h2> Region:{country.region}</h2>
-                <h2> Subregion:{country.subregion}</h2>
-                <h2> Actividad:{country.turisticas.length >=1 ? country.turisticas.map((e)=>{
+                <h2> Area: {country.area/1000000} Millones de km<sup>2</sup></h2>
+                <h2> Capital: {country.capital}</h2>
+                <h2> Poblacion: {country.population/100000} Millones de Personas</h2>
+                <h2> Region: {country.region}</h2>
+                <h2> Subregion: {country.subregion}</h2>
+                <Link to='/actividad' className='link'>
+                <h2> Actividad: {country.turisticas.length >=1 ? country.turisticas.map((e)=>{
                     return e.name
                 })
-                 : <Link to ='/crear'>Crear</Link>}
+                : <Link to ='/crear' className='link'>Crear</Link>}
 
-                </h2>
+                </h2> </Link>
                 {console.log('hola',country.name)}
                 {console.log(country)}
                 {console.log('soy act',country.turisticas)}
@@ -49,9 +57,13 @@ function Detalle () {
 
             </div>:
             <Espera/>
-            }
-        </div>
 
+            }
+            
+        
+        </div>
+        </div>
+        
         </>
     )
     
@@ -59,5 +71,6 @@ function Detalle () {
 // Array.isArray(country.turisticas)&&
 //                 country.turisticas.lenght>=1 ? country.turisticas.map((turisticas)=>{
 //                     return turisticas.name
-
+//<div id="image-detail" style={{ backgroundImage: `url(${country.flag})`, objectFit: 'cover' ,with:'1000'}}> 
+//</div>
 export default Detalle

@@ -5,23 +5,29 @@ import {
     FILTER_POBLACION,
     GET_ACTIVIDAD,
     All_TURISTICA,
-    FILTER_ABC} from "../acctions"
+    FILTER_ABC,
+    FILTRO_ACT,
+} from "../acctions"
 
-
+console.log('holis' , FILTRO_ACT)
 const initialState={
     country:[],
+    todasActividades:[],
+    countrydetai:[],
     actividad:[],
-    countrydetai:[]
+    copycountry:[]
 }
 function rootReducer(state=initialState,action){
 switch(action.type){
     case GET_COUNTRY: return{
         ...state,
-        country:action.payload
+        country:action.payload,
+        copycountry:action.payload
+
     }
     case GET_ACTIVIDAD: return{
         ...state,
-        actividad:action.payload
+        todasActividades:action.payload
     }
     case SEARCH_NAME: return{
         ...state,
@@ -76,24 +82,29 @@ switch(action.type){
 
     }
     case All_TURISTICA: {
-        if(!action.payload) return{
-            ...state,
-            country: state.actividad
-        }
-        return { 
-            ...state,
-            country:state.actividad.filter(e=>{
-                e.turistica.includes(action.payload) 
-            }
-
-                
-                )
-        }
+       if(!action.payload) return{...state, country:state.copycountry}
+       
+       return{
+           ...state,
+           country:state.copycountry.filter((pais)=>pais.turisticas.find((act)=>act.name===action.payload ))
+       }
+    
     }
+    case FILTRO_ACT:{
+        
+            
+          if(!action.payload) return{...state,country:state.copycountry }
+          return{
+              ...state,
+              country:state.copycountry.filter(e => e.region.includes(action.payload))
+          }      
+             
 
+
+       
+    }
    default : return state
 }
-}
-
+}console.log(All_TURISTICA)
 export default rootReducer
 
